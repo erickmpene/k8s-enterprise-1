@@ -11,18 +11,23 @@ spec:
             - key: env
               operator: In
               values:
-                - prod
-                - staging
                 - dev
+                - staging
+                - prod
   template:
     metadata:
       name: cert-manager-{{name}}
     spec:
       project: cert-manager
       source:
-        repoURL: git@github.com:erickmpene/cert-manager.git
-        targetRevision: main
-        path: certmanager
+        repoURL: https://charts.jetstack.io
+        chart: cert-manager
+        targetRevision: 1.14.4
+        helm:
+          valueFiles:
+            - values-{{name}}.yaml  # utilisé dans ton repo Git
+          values: |
+            installCRDs: true
       destination:
         server: '{{server}}'
         namespace: cert-manager

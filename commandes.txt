@@ -1,0 +1,4 @@
+### ------ cert-manager ------- ´###
+argocd repo add https://charts.jetstack.io --type helm --name cert-manager
+
+
