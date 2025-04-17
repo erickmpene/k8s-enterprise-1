@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: infra
+  namespace: argocd
+spec:
+  description: Projet pour tous les composants d'infrastructure (cert-manager, ingress, istio, metallb)
+
+  sourceRepos:
+    - git@github.com:erickmpene/kubernetes-gitops-repo.git
+    - https://charts.jetstack.io
+    - https://kubernetes.github.io/ingress-nginx
+    - https://charts.istio.io
+    - https://metallb.github.io/metallb
+
+  destinations:
+    - namespace: cert-manager
+      server: '*'
+    - namespace: ingress-nginx
+      server: '*'
+    - namespace: istio-system
+      server: '*'
+    - namespace: metallb-system
+      server: '*'
+
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+
+  orphanedResources:
+    warn: true
