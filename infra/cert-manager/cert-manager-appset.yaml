@@ -18,14 +18,14 @@ spec:
     metadata:
       name: cert-manager-{{name}}
     spec:
-      project: cert-manager
+      project: infra
       source:
-        repoURL: https://charts.jetstack.io
-        chart: cert-manager
-        targetRevision: 1.14.4
+        repoURL: git@github.com:erickmpene/kubernetes-gitops-repo.git
+        targetRevision: main
+        path: infra/cert-manager
         helm:
           valueFiles:
-            - values-{{name}}.yaml  # utilisé dans ton repo Git
+            - values-{{name}}.yaml
           values: |
             installCRDs: true
       destination:
