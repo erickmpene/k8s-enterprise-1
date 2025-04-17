@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cert-manager-multicluster
+  namespace: argocd
+spec:
+  generators:
+    - clusters:
+        selector:
+          matchExpressions:
+            - key: env
+              operator: In
+              values:
+                - prod
+                - staging
+                - dev
+  template:
+    metadata:
+      name: cert-manager-{{name}}
+    spec:
+      project: cert-manager
+      source:
+        repoURL: git@github.com:erickmpene/cert-manager.git
+        targetRevision: main
+        path: certmanager
+      destination:
+        server: '{{server}}'
+        namespace: cert-manager
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
