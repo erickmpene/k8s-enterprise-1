@@ -20,9 +20,9 @@ spec:
     spec:
       project: infra
       source:
-        repoURL: git@github.com:erickmpene/kubernetes-gitops-repo.git
-        targetRevision: main
-        path: infra/cert-manager
+        repoURL: https://charts.jetstack.io
+        chart: cert-manager
+        targetRevision: 1.17.1
         helm:
           valueFiles:
             - values-{{name}}.yaml
