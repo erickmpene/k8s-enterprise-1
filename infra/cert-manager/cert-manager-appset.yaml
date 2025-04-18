@@ -20,15 +20,12 @@ spec:
     spec:
       project: infra
       source:
-        repoURL: https://charts.jetstack.io
-        chart: cert-manager
-        targetRevision: 1.17.1
-        path: infra/cert-manager
+        repoURL: https://github.com/erickmpene/k8s-enterprise-1.git
+        targetRevision: main
+        path: infra/cert-manager/chart
         helm:
           valueFiles:
-            - values-{{name}}.yaml
-          values: |
-            installCRDs: true
+            - ../values-{{name}}.yaml
       destination:
         server: '{{server}}'
         namespace: cert-manager
