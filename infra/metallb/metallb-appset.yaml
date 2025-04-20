@@ -36,12 +36,16 @@ spec:
           selfHeal: true
         syncOptions:
           - CreateNamespace=true
-
       info:
-        - name: Health check
-          value: |
-            Custom checks ensure speaker and controller are ready
-
+        - name: Managed by
+          value: ArgoCD with Helm
+        - name: Purpose
+          value: Deploy MetalLB with per-cluster IP pools
+      ignoreDifferences:
+        - group: ""
+          kind: ConfigMap
+          jsonPointers:
+            - /data/config
       healthChecks:
         - group: apps
           kind: Deployment
@@ -51,9 +55,9 @@ spec:
             hs = {}
             if obj.status ~= nil and obj.status.readyReplicas == obj.status.replicas then
               hs.status = "Healthy"
-              hs.message = "Controller is ready"
+              hs.message = "MetalLB Controller is ready"
             else
               hs.status = "Progressing"
-              hs.message = "Waiting for controller to become ready"
+              hs.message = "Waiting for controller to be ready"
             end
             return hs
