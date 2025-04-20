@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: ingress-controller-multicluster
+  name: nginx-controller
   namespace: argocd
 spec:
   generators:
@@ -17,7 +17,7 @@ spec:
 
   template:
     metadata:
-      name: ingress-controller-nginx-{{name}}
+      name: ingress-{{name}}
     spec:
       project: infra
       source:
