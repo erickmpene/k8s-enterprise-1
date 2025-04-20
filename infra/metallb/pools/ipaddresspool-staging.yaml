@@ -1,7 +1,7 @@
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
 metadata:
-  name: staging
+  name: staging-IPAddressPool
   namespace: metallb-system
 spec:
   addresses:
@@ -11,6 +11,6 @@ spec:
 apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
 metadata:
-  name: staging
+  name: staging-ingress-l2
   namespace: metallb-system
 

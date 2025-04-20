@@ -1,7 +1,7 @@
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
 metadata:
-  name: dev
+  name: dev-IPAddressPool
   namespace: metallb-system
 spec:
   addresses:
@@ -11,5 +11,5 @@ spec:
 apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
 metadata:
-  name: dev
+  name: dev-ingress-l2
   namespace: metallb-system
