@@ -1,2 +1,9 @@
-replicaCount: 2
 namespaceOverride: ingress-nginx
+controller:
+  replicaCount: 3
+  ingressClassResource:
+    name: nginx
+    enabled: true
+  ingressClass: nginx
+  service:
+    type: ClusterIP  # ou NodePort si bare-metal sans MetalLB
