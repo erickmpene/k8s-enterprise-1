@@ -1,0 +1,38 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: metallb
+  namespace: argocd
+spec:
+  generators:
+    - clusters:
+        selector:
+          matchExpressions:
+            - key: env
+              operator: In
+              values:
+                - dev
+                - staging
+                - prod
+
+  template:
+    metadata:
+      name: metallb-{{name}}
+    spec:
+      project: infra
+      source:
+        repoURL: https://github.com/erickmpene/k8s-enterprise-1.git
+        targetRevision: main
+        path: infra/metallb/chart
+        helm:
+          valueFiles:
+            - ../values-{{name}}.yaml
+      destination:
+        server: '{{server}}'
+        namespace: metallb-system
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true

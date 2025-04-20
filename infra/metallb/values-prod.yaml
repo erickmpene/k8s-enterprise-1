@@ -1,0 +1,2 @@
+namespaceOverride: metallb-system
+replicaCount: 3
