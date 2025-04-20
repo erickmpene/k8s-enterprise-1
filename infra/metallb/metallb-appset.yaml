@@ -41,23 +41,3 @@ spec:
           value: ArgoCD with Helm
         - name: Purpose
           value: Deploy MetalLB with per-cluster IP pools
-      ignoreDifferences:
-        - group: ""
-          kind: ConfigMap
-          jsonPointers:
-            - /data/config
-      healthChecks:
-        - group: apps
-          kind: Deployment
-          name: controller
-          namespace: metallb-system
-          health.lua: |
-            hs = {}
-            if obj.status ~= nil and obj.status.readyReplicas == obj.status.replicas then
-              hs.status = "Healthy"
-              hs.message = "MetalLB Controller is ready"
-            else
-              hs.status = "Progressing"
-              hs.message = "Waiting for controller to be ready"
-            end
-            return hs
