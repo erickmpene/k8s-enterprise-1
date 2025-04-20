@@ -1,15 +1,2 @@
 namespaceOverride: metallb-system
 replicaCount: 2
-
-controller:
-  logLevel: info
-
-speaker:
-  logLevel: info
-
-configInline:
-  address-pools:
-    - name: staging
-      protocol: layer2
-      addresses:
-        - 192.168.1.44-192.168.1.46
