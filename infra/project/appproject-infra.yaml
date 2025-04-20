@@ -7,12 +7,11 @@ spec:
   description: Projet pour tous les composants d'infrastructure (cert-manager, ingress, istio, metallb)
 
   sourceRepos:
-    - git@github.com:erickmpene/kubernetes-gitops-repo.git
     - https://charts.jetstack.io
     - https://kubernetes.github.io/ingress-nginx
     - https://charts.istio.io
     - https://metallb.github.io/metallb
-
+    - https://github.com/erickmpene/k8s-enterprise-1.git 
   destinations:
     - namespace: cert-manager
       server: '*'
