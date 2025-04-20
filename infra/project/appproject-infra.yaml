@@ -29,19 +29,3 @@ spec:
 
   orphanedResources:
     warn: false
-
-  healthChecks:
-    - group: apps
-      kind: Deployment
-      name: controller
-      namespace: metallb-system
-      health.lua: |
-        hs = {}
-        if obj.status ~= nil and obj.status.readyReplicas == obj.status.replicas then
-          hs.status = "Healthy"
-          hs.message = "MetalLB Controller is ready"
-        else
-          hs.status = "Progressing"
-          hs.message = "Waiting for controller to be ready"
-        end
-        return hs
