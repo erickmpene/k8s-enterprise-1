@@ -6,4 +6,4 @@ controller:
     enabled: true
   ingressClass: nginx
   service:
-    type: LoadBalancer  # ou NodePort si bare-metal sans MetalLB
+    type: NodePort  # ou NodePort si bare-metal sans MetalLB
