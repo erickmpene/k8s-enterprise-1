@@ -1,0 +1,5 @@
+namespaceOverride: metallb-system
+controller:
+  logLevel: info
+speaker:
+  logLevel: info

@@ -1,0 +1,5 @@
+{{- $files := .Files.Glob "resources/*.yaml" }}
+{{- range $path, $content := $files }}
+{{ $content | nindent 0 }}
+---
+{{- end }}
