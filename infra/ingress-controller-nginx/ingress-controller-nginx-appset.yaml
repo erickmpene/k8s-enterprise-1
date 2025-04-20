@@ -23,7 +23,7 @@ spec:
       source:
         repoURL: https://github.com/erickmpene/k8s-enterprise-1.git
         targetRevision: main
-        path: /infra/ingress-controller-nginx/chart
+        path: infra/ingress-controller-nginx/chart
         helm:
           valueFiles:
             - ../values-{{name}}.yaml
