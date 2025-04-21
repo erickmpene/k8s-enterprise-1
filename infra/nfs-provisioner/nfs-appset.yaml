@@ -16,7 +16,7 @@ spec:
                 - prod
   template:
     metadata:
-      name: nfs-provisioner-{{name}}
+      name: {{name}}
     spec:
       project: infra
       source:
