@@ -9,7 +9,6 @@ nfs:
   path: /srv/nfs/cluster-prod
 
 storageClass:
-  name: nfs-client
-  defaultClass: true
+  name: nfs-prod
+  defaultClass: false
   reclaimPolicy: Retain
-
