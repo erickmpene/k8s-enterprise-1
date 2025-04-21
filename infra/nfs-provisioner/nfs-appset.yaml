@@ -1,0 +1,42 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: nfs-provisioner-multicluster
+  namespace: argocd
+spec:
+  generators:
+    - clusters:
+        selector:
+          matchExpressions:
+            - key: env
+              operator: In
+              values:
+                - dev
+                - staging
+                - prod
+  template:
+    metadata:
+      name: nfs-provisioner-{{name}}
+    spec:
+      project: infra
+      source:
+        repoURL: https://github.com/erickmpene/k8s-enterprise-1.git
+        targetRevision: main
+        path: infra/nfs-provisioner/envs/{{name}}
+        helm:
+          valueFiles:
+            - values.yaml
+      destination:
+        server: '{{server}}'
+        namespace: nfs-provisioner
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+      info:
+        - name: Managed by
+          value: ArgoCD with Helm
+        - name: Purpose
+          value: Deploy nfs-provisioner with per-cluster
