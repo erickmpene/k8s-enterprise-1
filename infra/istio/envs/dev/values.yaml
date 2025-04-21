@@ -3,22 +3,26 @@ controller:
   logLevel: info
 speaker:
   logLevel: info
-# Chart: base
+
+# Chart: istio/base
 base:
   enabled: true
 
-# Chart: istiod (control plane)
+# Chart: istio/istiod (control plane)
 istiod:
   enabled: true
   global:
     istioNamespace: istio-system
 
-# Chart: gateway (alias: istio-ingress)
+# Chart: istio/gateway (alias: istio-ingress)
 istio-ingress:
   enabled: true
   name: istio-ingress
-  labels:
-    istio: ingressgateway
+  image:
+    repository: docker.io/istio/proxyv2
+    tag: 1.25.2
+  autoscaleEnabled: false
+  replicaCount: 1
   service:
     type: LoadBalancer
     ports:
@@ -28,12 +32,5 @@ istio-ingress:
       - name: https
         port: 443
         targetPort: 8443
-  autoscaleEnabled: false
-  replicaCount: 1
-global:
-  proxy:
-    image: istio/proxyv2
-    tag: 1.25.2
-hub: docker.io/istio
-image: proxyv2
-tag: 1.25.2
+  labels:
+    istio: ingressgateway
