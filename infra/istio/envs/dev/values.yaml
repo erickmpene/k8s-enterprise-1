@@ -1,0 +1,32 @@
+namespaceOverride: istio-system
+controller:
+  logLevel: info
+speaker:
+  logLevel: info
+# Chart: base
+base:
+  enabled: true
+
+# Chart: istiod (control plane)
+istiod:
+  enabled: true
+  global:
+    istioNamespace: istio-system
+
+# Chart: gateway (alias: istio-ingress)
+istio-ingress:
+  enabled: true
+  name: istio-ingress
+  labels:
+    istio: ingressgateway
+  service:
+    type: LoadBalancer
+    ports:
+      - name: http2
+        port: 80
+        targetPort: 8080
+      - name: https
+        port: 443
+        targetPort: 8443
+  autoscaleEnabled: false
+  replicaCount: 1
