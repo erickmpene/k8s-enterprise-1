@@ -16,9 +16,6 @@ istiod:
 # Chart: gateway (alias: istio-ingress)
 istio-ingress:
   enabled: true
-  image:
-    repository: istio/proxyv2
-    tag: 1.25.2
   name: istio-ingress
   labels:
     istio: ingressgateway
@@ -37,3 +34,6 @@ global:
   proxy:
     image: istio/proxyv2
     tag: 1.25.2
+hub: docker.io/istio
+image: proxyv2
+tag: 1.25.2
