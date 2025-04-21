@@ -8,29 +8,14 @@ hub: docker.io/istio
 image: proxyv2
 tag: 1.25.2
 
+image: docker.io/istio/proxyv2:1.25.2
 
-base:
-  enabled: true
-
-istiod:
-  enabled: true
-  global:
-    istioNamespace: istio-system
-
-istio-ingress:
-  enabled: true
-  name: istio-ingress
-#  image: docker.io/istio/proxyv2:1.25.2
-  autoscaleEnabled: false
-  replicaCount: 1
-  service:
-    type: LoadBalancer
-    ports:
-      - name: http2
-        port: 80
-        targetPort: 8080
-      - name: https
-        port: 443
-        targetPort: 8443
-  labels:
-    istio: ingressgateway
+service:
+  type: LoadBalancer
+  ports:
+    - name: http2
+      port: 80
+      targetPort: 8080
+    - name: https
+      port: 443
+      targetPort: 8443
