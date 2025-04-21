@@ -16,7 +16,7 @@ spec:
                 - prod
   template:
     metadata:
-      name: {{name}}
+      name: nfs-{{name}}
     spec:
       project: infra
       source:

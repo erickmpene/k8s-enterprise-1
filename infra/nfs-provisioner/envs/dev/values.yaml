@@ -4,12 +4,17 @@ controller:
 speaker:
   logLevel: info
 
-nfs:
-  server: 192.168.1.170
-  path: /srv/nfs/cluster-dev
-
 storageClass:
   name: nfs-client
   defaultClass: true
+
+nfs:
+  server: 192.168.1.170
+  path: /srv/nfs/cluster-dev
   reclaimPolicy: Retain
 
+replicaCount: 1
+image:
+  repository: registry.k8s.io/sig-storage/nfs-subdir-external-provisioner
+  tag: v4.0.2
+  pullPolicy: IfNotPresent
