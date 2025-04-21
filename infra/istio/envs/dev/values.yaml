@@ -16,6 +16,9 @@ istiod:
 # Chart: gateway (alias: istio-ingress)
 istio-ingress:
   enabled: true
+  image:
+    repository: istio/proxyv2
+    tag: 1.25.2
   name: istio-ingress
   labels:
     istio: ingressgateway
@@ -30,3 +33,7 @@ istio-ingress:
         targetPort: 8443
   autoscaleEnabled: false
   replicaCount: 1
+global:
+  proxy:
+    image: istio/proxyv2
+    tag: 1.25.2
