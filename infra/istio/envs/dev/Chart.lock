@@ -2,11 +2,14 @@ dependencies:
 - name: base
   repository: https://istio-release.storage.googleapis.com/charts
   version: 1.25.2
+- name: cni
+  repository: https://istio-release.storage.googleapis.com/charts
+  version: 1.25.2
 - name: istiod
   repository: https://istio-release.storage.googleapis.com/charts
   version: 1.25.2
 - name: gateway
   repository: https://istio-release.storage.googleapis.com/charts
   version: 1.25.2
-digest: sha256:2be5eef915ad58b7eb395ecb7c80845f67b8608345f4559fe77ec9902df974b7
-generated: "2025-04-21T02:56:19.195212723+02:00"
+digest: sha256:b6104f608d8460393488a85669bd732befdf42d31a97f1b7a7f9fb624519c756
+generated: "2025-04-21T04:32:13.435048307+02:00"
