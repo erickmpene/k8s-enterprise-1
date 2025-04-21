@@ -1,0 +1,15 @@
+namespaceOverride: nfs-provisioner
+controller:
+  logLevel: info
+speaker:
+  logLevel: info
+
+nfs:
+  server: 192.168.1.170
+  path: /srv/nfs/cluster-prod
+
+storageClass:
+  name: nfs-client
+  defaultClass: true
+  reclaimPolicy: Retain
+
