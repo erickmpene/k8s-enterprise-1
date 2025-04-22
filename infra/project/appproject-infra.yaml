@@ -11,7 +11,8 @@ spec:
     - https://kubernetes.github.io/ingress-nginx
     - https://charts.istio.io
     - https://metallb.github.io/metallb
-    - https://github.com/erickmpene/k8s-enterprise-1.git 
+    - https://github.com/erickmpene/k8s-enterprise-1.git
+    - https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner 
   destinations:
     - namespace: cert-manager
       server: '*'
@@ -22,6 +23,8 @@ spec:
     - namespace: metallb-system
       server: '*'
     - namespace: kube-system
+      server: '*'
+    - namespace: nfs-provisioner
       server: '*'
 
   clusterResourceWhitelist:
