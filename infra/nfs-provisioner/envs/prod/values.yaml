@@ -7,7 +7,6 @@ speaker:
 nfs:
   server: 192.168.1.170
   path: /srv/nfs/cluster-prod
-  volumeName: nfs-subdir-external-provisioner-root
   reclaimPolicy: Retain
 
 storageClass:
