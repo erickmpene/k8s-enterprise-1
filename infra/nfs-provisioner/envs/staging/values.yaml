@@ -1,15 +1,15 @@
-namespaceOverride: nfs-provisioner
-controller:
-  logLevel: info
-speaker:
-  logLevel: info
+nfs-subdir-external-provisioner:
+  nfs:
+    server: 192.168.1.170
+    path: /srv/nfs/cluster-staging
+    reclaimPolicy: Retain
 
-nfs:
-  server: 192.168.1.170
-  path: /srv/nfs/cluster-staging
+  storageClass:
+    name: nfs-staging
+    defaultClass: false
 
-storageClass:
-  name: nfs-client
-  defaultClass: true
-  reclaimPolicy: Retain
-
+  controller:
+    logLevel: info
+  speaker:
+    logLevel: info
+  namespaceOverride: nfs-provisioner

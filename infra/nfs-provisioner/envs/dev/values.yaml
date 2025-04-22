@@ -1,16 +1,15 @@
-namespaceOverride: nfs-provisioner
-controller:
-  logLevel: info
-speaker:
-  logLevel: info
+nfs-subdir-external-provisioner:
+  nfs:
+    server: 192.168.1.170
+    path: /srv/nfs/cluster-dev
+    reclaimPolicy: Retain
 
-storageClass:
-  name: nfs-dev
-  defaultClass: false
-  reclaimPolicy: Retain
+  storageClass:
+    name: nfs-dev
+    defaultClass: false
 
-nfs:
-  server: 192.168.1.170
-  path: /srv/nfs/cluster-dev
-
-replicaCount: 1
+  controller:
+    logLevel: info
+  speaker:
+    logLevel: info
+  namespaceOverride: nfs-provisioner
