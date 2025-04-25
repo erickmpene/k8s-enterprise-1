@@ -4,3 +4,7 @@ controller:
   logLevel: info
 speaker:
   logLevel: info
+startupapicheck:
+  enabled: true
+  backoffLimit: 4
+  ttlSecondsAfterFinished: 0   # ❗ Par défaut, il supprime immédiatement les pods échoués
