@@ -12,8 +12,8 @@ spec:
               operator: In
               values:
                 - dev
-                - staging
-                - prod
+#                - staging
+#                - prod
   template:
     metadata:
       name: cert-manager-{{name}}
@@ -22,10 +22,10 @@ spec:
       source:
         repoURL: https://github.com/erickmpene/k8s-enterprise-1.git
         targetRevision: main
-        path: infra/cert-manager/chart
+        path: infra/cert-manager/envs/{{name}}
         helm:
           valueFiles:
-            - ../values-{{name}}.yaml
+            - values.yaml
       destination:
         server: '{{server}}'
         namespace: cert-manager

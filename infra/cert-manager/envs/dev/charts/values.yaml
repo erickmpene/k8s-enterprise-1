@@ -1,0 +1,6 @@
+replicaCount: 1
+namespaceOverride: cert-manager
+controller:
+  logLevel: info
+speaker:
+  logLevel: info
