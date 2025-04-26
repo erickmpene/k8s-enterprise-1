@@ -12,8 +12,8 @@ spec:
               operator: In
               values:
                 - dev
-#                - staging
-#                - prod
+                - staging
+                - prod
   template:
     metadata:
       name: cert-manager-{{name}}
