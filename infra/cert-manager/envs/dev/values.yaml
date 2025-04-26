@@ -7,4 +7,6 @@ speaker:
 startupapicheck:
   enabled: true
   backoffLimit: 4
-  ttlSecondsAfterFinished: 0   # ❗ Par défaut, il supprime immédiatement les pods échoués
+  ttlSecondsAfterFinished: 0
+installCRDs: false
+
