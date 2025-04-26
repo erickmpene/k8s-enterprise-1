@@ -8,5 +8,5 @@ startupapicheck:
   enabled: true
   backoffLimit: 4
   ttlSecondsAfterFinished: 0
-installCRDs: false
+#installCRDs: false
 
