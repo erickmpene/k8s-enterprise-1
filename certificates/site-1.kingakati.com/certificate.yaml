@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: site-1.kingakati.com-cert
+  namespace: site-1.kingakati.com
+spec:
+  secretName: site-1.kingakati.com-tls
+  commonName: site-1.kingakati.com
+  dnsNames:
+    - site-1.kingakati.com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
