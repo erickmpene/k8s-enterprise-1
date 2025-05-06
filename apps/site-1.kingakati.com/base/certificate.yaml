@@ -4,10 +4,12 @@ metadata:
   name: site-1.kingakati.com-cert
   namespace: site-1.kingakati.com
 spec:
-  secretName: site-1.kingakati.com-tls
+  secretName: site-1.kingakati.com-tls-secret
+  duration: 2160h
+  renewBefore: 360h
   commonName: site-1.kingakati.com
   dnsNames:
     - site-1.kingakati.com
   issuerRef:
-    name: letsencrypt-prod
-    kind: ClusterIssuer
+    name: site-1.kingakati.com-issuer
+    kind: Issuer

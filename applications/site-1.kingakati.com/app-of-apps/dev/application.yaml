@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: site-1-dev-root
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:erickmpene/k8s-enterprise-1.git
+    targetRevision: main
+    path: applications/site-1.kingakati.com/app-of-apps/dev
+    directory:
+      recurse: true
+  destination:
+    server: https://kbs.dev.notylus.com:6443
+    namespace: argocd
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
