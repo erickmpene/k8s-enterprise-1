@@ -1,20 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: site-1.kingakati.com-staging
+  name: site-1.kingakati.com-staging-web
   namespace: argocd
 spec:
   project: site-1.kingakati.com
   source:
     repoURL: git@github.com:erickmpene/k8s-enterprise-1.git
     targetRevision: staging
-    path: applications/site-1.kingakati.com/app-of-apps/staging
-    directory:
-      recurse: true
+    path: applications/site-1.kingakati.com/web/overlays/staging
   destination:
     server: https://kbs.staging.notylus.com:6443
-    namespace: argocd
+    namespace: site-1.kingakati.com-staging
   syncPolicy:
     automated:
       selfHeal: true
       prune: true
+    syncOptions:
+      - CreateNamespace=true

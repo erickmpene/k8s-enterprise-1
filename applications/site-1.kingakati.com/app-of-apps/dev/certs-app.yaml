@@ -1,19 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: site-1.kingakati.com-staging
+  name: site-1.kingakati.com-dev-certs
   namespace: argocd
 spec:
   project: site-1.kingakati.com
   source:
     repoURL: git@github.com:erickmpene/k8s-enterprise-1.git
-    targetRevision: staging
-    path: applications/site-1.kingakati.com/app-of-apps/staging
-    directory:
-      recurse: true
+    targetRevision: main
+    path: applications/site-1.kingakati.com/certs/overlays/dev
   destination:
-    server: https://kbs.staging.notylus.com:6443
-    namespace: argocd
+    server: https://kbs.dev.notylus.com:6443
+    namespace: cert-manager
   syncPolicy:
     automated:
       selfHeal: true
