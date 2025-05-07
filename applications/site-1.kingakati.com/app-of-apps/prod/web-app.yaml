@@ -10,7 +10,7 @@ spec:
     targetRevision: main
     path: applications/site-1.kingakati.com/web/overlays/prod
   destination:
-    server: https://k8s.prod.notylus.com:6443
+    server: https://k8s.argocd.notylus.com:6443
     namespace: site-1.kingakati.com-prod
   syncPolicy:
     automated:
