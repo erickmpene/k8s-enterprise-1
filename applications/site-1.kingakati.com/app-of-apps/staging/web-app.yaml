@@ -10,7 +10,7 @@ spec:
     targetRevision: staging
     path: applications/site-1.kingakati.com/web/overlays/staging
   destination:
-    server: https://kbs.staging.notylus.com:6443
+    server: https://k8s.staging.notylus.com:6443
     namespace: site-1.kingakati.com-staging
   syncPolicy:
     automated:

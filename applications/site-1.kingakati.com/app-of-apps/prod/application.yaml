@@ -12,7 +12,7 @@ spec:
     directory:
       recurse: true
   destination:
-    server: https://kbs.prod.notylus.com:6443
+    server: https://k8s.prod.notylus.com:6443
     namespace: argocd
   syncPolicy:
     automated:

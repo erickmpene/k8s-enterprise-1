@@ -10,7 +10,7 @@ spec:
     targetRevision: main
     path: applications/site-1.kingakati.com/certs/overlays/dev
   destination:
-    server: https://kbs.dev.notylus.com:6443
+    server: https://kbs.notylus.com:6443
     namespace: cert-manager
   syncPolicy:
     automated:
