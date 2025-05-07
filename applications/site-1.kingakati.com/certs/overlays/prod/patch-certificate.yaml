@@ -9,4 +9,4 @@ spec:
   dnsNames:
     - site-1.kingakati.com
   issuerRef:
-    name: site-1.kingakati.com-prod-issuer
+    name: site-1.kingakati.com-issuer
