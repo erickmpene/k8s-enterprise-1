@@ -1,0 +1,9 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: site-1.kingakati.com-dev-issuer
+spec:
+  acme:
+    email: risty.beatmaker@gmail.com
+    privateKeySecretRef:
+      name: site-1.kingakati.com-dev-account-key

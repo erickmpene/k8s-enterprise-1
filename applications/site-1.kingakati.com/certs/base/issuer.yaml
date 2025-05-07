@@ -1,14 +1,14 @@
 apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
-  name: site-1.kingakati.com-issuer
+  name: PLACEHOLDER
   namespace: cert-manager
 spec:
   acme:
-    email: risty.beatmaker@gmail.com
+    email: PLACEHOLDER
     server: https://acme-staging-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
-      name: site-1.kingakati.com-issuer-account-key
+      name: PLACEHOLDER
     solvers:
       - http01:
           ingress:
