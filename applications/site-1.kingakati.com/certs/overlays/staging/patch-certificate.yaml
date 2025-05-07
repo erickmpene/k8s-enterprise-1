@@ -2,6 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: site-1.kingakati.com-cert
+  namespace: cert-manager
 spec:
   secretName: site-1.kingakati.com-staging-tls-secret
   commonName: site-1.kingakati.com
