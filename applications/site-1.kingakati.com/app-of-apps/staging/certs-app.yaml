@@ -7,7 +7,7 @@ spec:
   project: site-1.kingakati.com
   source:
     repoURL: git@github.com:erickmpene/k8s-enterprise-1.git
-    targetRevision: staging
+    targetRevision: main
     path: applications/site-1.kingakati.com/certs/overlays/staging
   destination:
     server: https://k8s.staging.notylus.com:6443

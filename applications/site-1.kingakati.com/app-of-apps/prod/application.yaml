@@ -7,7 +7,7 @@ spec:
   project: site-1.kingakati.com
   source:
     repoURL: git@github.com:erickmpene/k8s-enterprise-1.git
-    targetRevision: prod
+    targetRevision: main
     path: applications/site-1.kingakati.com/app-of-apps/prod
     directory:
       recurse: true

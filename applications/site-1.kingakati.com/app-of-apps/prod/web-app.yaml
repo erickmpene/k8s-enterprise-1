@@ -7,7 +7,7 @@ spec:
   project: site-1.kingakati.com
   source:
     repoURL: git@github.com:erickmpene/k8s-enterprise-1.git
-    targetRevision: prod
+    targetRevision: main
     path: applications/site-1.kingakati.com/web/overlays/prod
   destination:
     server: https://k8s.prod.notylus.com:6443
