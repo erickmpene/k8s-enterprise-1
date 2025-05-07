@@ -10,7 +10,7 @@ spec:
     targetRevision: main
     path: applications/site-1.kingakati.com/certs/overlays/prod
   destination:
-    server: https://kubernetes.default.svc
+    server: https://k8s.prod.notylus.com:6443
     namespace: cert-manager
   syncPolicy:
     automated:
