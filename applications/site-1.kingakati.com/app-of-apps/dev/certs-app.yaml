@@ -10,7 +10,7 @@ spec:
     targetRevision: main
     path: applications/site-1.kingakati.com/certs/overlays/dev
   destination:
-    server: https://k8s.argocd.notylus.com:6443
+    server: https://kubernetes.default.svc
     namespace: cert-manager
   syncPolicy:
     automated:
