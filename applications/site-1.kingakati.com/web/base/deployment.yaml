@@ -17,8 +17,8 @@ spec:
         app: site-vitrine-site-1-kingakati-com
     spec:
       containers:
-      - image: PLACEHOLDER
-        name: PLACEHOLDER
+      - image: erickmpene/site-vitrine:dev
+        name: site-vitrine-dev
         ports:
         - containerPort: 8080
         resources: {}
