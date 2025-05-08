@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: site-vitrine-site-1.kingakati.com
+  name: site-vitrine
+  namespace: site-1.kingakati.com
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: site-vitrine-site-1.kingakati.com
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: site-vitrine-site-1.kingakati.com
+    spec:
+      containers:
+      - image: PLACEHOLDER
+        name: PLACEHOLDER
+        ports:
+        - containerPort: PLACEHOLDER
+        resources: {}
+status: {}

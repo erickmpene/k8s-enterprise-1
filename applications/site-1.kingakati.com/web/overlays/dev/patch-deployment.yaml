@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: site-vitrine-site-1.kingakati.com
+  name: site-vitrine
+  namespace: site-1.kingakati.com
+spec:
+  template:
+    spec:
+      containers:
+      - image: erickmpene/site-vitrine:dev
+        name: site-vitrine-dev
+        ports:
+        - containerPort: 8080

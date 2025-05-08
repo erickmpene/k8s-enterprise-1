@@ -9,16 +9,16 @@ metadata:
 spec:
   tls:
     - hosts:
-        - PLACEHOLDER
-      secretName: PLACEHOLDER
+        - dev.site-1.kingakati.com
+      secretName: site-1.kingakati.com-dev-tls-secret
   rules:
-    - host: PLACEHOLDER
+    - host: dev.site-1.kingakati.com
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: PLACEHOLDER
+                name: dev.site-1.kingakati.com
                 port:
                   number: 80

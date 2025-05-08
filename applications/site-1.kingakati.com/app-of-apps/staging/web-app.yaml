@@ -11,7 +11,7 @@ spec:
     path: applications/site-1.kingakati.com/web/overlays/staging
   destination:
     server: https://k8s.staging.notylus.com:6443
-    namespace: site-1.kingakati.com-staging
+    namespace: site-1.kingakati.com
   syncPolicy:
     automated:
       selfHeal: true
