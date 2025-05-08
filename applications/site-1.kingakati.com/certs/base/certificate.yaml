@@ -1,7 +1,7 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: site-1.kingakati.com-cert
+  name: site-1-kingakati-com-cert
   namespace: site-1-kingakati-com
 spec:
   secretName: PLACEHOLDER

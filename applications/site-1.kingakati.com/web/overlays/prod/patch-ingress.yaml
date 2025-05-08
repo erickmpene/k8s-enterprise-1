@@ -5,12 +5,12 @@ metadata:
   namespace: site-1-kingakati-com
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    cert-manager.io/issuer: site-1.kingakati.com-issuer
+    cert-manager.io/issuer: site-1-kingakati-com-issuer
 spec:
   tls:
     - hosts:
         - site-1.kingakati.com
-      secretName: site-1.kingakati.com-prod-tls-secret
+      secretName: site-1-kingakati-com-prod-tls-secret
   rules:
     - host: site-1.kingakati.com
       http:
