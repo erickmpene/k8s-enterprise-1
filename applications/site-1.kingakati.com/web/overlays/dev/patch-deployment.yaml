@@ -10,6 +10,6 @@ spec:
     spec:
       containers:
       - image: erickmpene/site-vitrine:dev
-        name: site-vitrine-dev
+        name: site-vitrine
         ports:
         - containerPort: 8080
