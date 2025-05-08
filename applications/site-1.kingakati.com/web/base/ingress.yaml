@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: site-1.kingakati.com-ingress
-  namespace: site-1.kingakati.com
+  namespace: site-1-kingakati-com
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     cert-manager.io/issuer: site-1.kingakati.com-issuer
