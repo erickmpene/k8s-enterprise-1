@@ -5,8 +5,8 @@ metadata:
   namespace: cert-manager
 spec:
   secretName: site-1.kingakati.com-staging-tls-secret
-  commonName: site-1.kingakati.com
+  commonName: staging.site-1.kingakati.com
   dnsNames:
-    - site-1.kingakati.com
+    - staging.site-1.kingakati.com
   issuerRef:
     name: site-1.kingakati.com-issuer
