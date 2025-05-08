@@ -2,7 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
   name: site-1.kingakati.com-issuer
-  namespace: cert-manager
+  namespace: site-1-kingakati-com
 spec:
   acme:
     email: PLACEHOLDER
