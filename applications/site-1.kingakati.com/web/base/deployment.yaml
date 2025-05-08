@@ -20,6 +20,6 @@ spec:
       - image: PLACEHOLDER
         name: site-vitrine
         ports:
-        - containerPort: 8080
+        - containerPort: 80
         resources: {}
 status: {}
