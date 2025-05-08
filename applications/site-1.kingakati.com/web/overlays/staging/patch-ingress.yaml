@@ -9,7 +9,7 @@ spec:
   tls:
     - hosts:
         - staging.site-1.kingakati.com
-      secretName: site-1.kingakati.com-staging-tls-secret
+      secretName: site-1-kingakati-com-staging-tls-secret
   rules:
     - host: staging.site-1.kingakati.com
       http:

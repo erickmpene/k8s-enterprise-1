@@ -9,7 +9,7 @@ spec:
   tls:
     - hosts:
         - dev.site-1.kingakati.com
-      secretName: site-1.kingakati.com-dev-tls-secret
+      secretName: site-1-kingakati-com-dev-tls-secret
   rules:
     - host: dev.site-1.kingakati.com
       http:

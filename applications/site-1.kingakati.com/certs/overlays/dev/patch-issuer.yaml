@@ -1,10 +1,10 @@
 apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
-  name: site-1.kingakati.com-issuer
-  namespace: cert-manager
+  name: site-1-kingakati-com-issuer
+  namespace: site-1-kingakati-com
 spec:
   acme:
     email: risty.beatmaker@gmail.com
     privateKeySecretRef:
-      name: site-1.kingakati.com-dev-account-key
+      name: site-1-kingakati-com-dev-account-key

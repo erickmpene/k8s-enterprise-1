@@ -1,12 +1,12 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: site-1.kingakati.com-cert
-  namespace: cert-manager
+  name: site-1-kingakati-com-cert
+  namespace: site-1-kingakati-com
 spec:
-  secretName: site-1.kingakati.com-dev-tls-secret
+  secretName: site-1-kingakati-com-dev-tls-secret
   commonName: dev.site-1.kingakati.com
   dnsNames:
     - dev.site-1.kingakati.com
   issuerRef:
-    name: site-1.kingakati.com-issuer
+    name: site-1-kingakati-com-issuer
