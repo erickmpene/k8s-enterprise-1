@@ -11,8 +11,10 @@ spec:
     path: applications/site-1.kingakati.com/certs/overlays/staging
   destination:
     server: https://k8s.staging.notylus.com:6443
-    namespace: cert-manager
+    namespace: site-1-kingakati-com
   syncPolicy:
     automated:
       selfHeal: true
       prune: true
+    syncOptions:
+      - CreateNamespace=true
