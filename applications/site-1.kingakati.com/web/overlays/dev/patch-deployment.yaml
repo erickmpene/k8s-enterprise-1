@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: site-vitrine-site-1.kingakati.com
+    app: site-vitrine-site-1-kingakati-com
   name: site-vitrine
   namespace: site-1-kingakati-com
 spec:
