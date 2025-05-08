@@ -7,6 +7,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
     cert-manager.io/issuer: site-1.kingakati.com-issuer
 spec:
+  ingressClassName: nginx
   tls:
     - hosts:
         - PLACEHOLDER
