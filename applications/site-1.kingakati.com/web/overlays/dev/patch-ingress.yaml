@@ -19,6 +19,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: dev.site-1.kingakati.com
+                name: site-1-kingakati-com
                 port:
                   number: 80
