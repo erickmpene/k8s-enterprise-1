@@ -7,4 +7,4 @@ spec:
   acme:
     email: risty.beatmaker@gmail.com
     privateKeySecretRef:
-      name: notylus.com-dev-account-key
+      name: notylus-com-dev-account-key
