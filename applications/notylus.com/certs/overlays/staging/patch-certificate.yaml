@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: notylus-com-cert
+  namespace: notylus.com
+spec:
+  secretName: notylus-com-staging-tls-secret
+  commonName: staging.notylus.com
+  dnsNames:
+    - staging.notylus.com
+  issuerRef:
+    name: notylus-com-issuer

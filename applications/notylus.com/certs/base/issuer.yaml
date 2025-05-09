@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: notylus-com-issuer
+  namespace: notylus.com
+spec:
+  acme:
+    email: PLACEHOLDER
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: PLACEHOLDER
+    solvers:
+      - http01:
+          ingress:
+            class: nginx

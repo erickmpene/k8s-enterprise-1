@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: notylus-com-cert
+  namespace: notylus.com
+spec:
+  secretName: notylus-com-dev-tls-secret
+  commonName: dev.notylus.com
+  dnsNames:
+    - dev.notylus.com
+  issuerRef:
+    name: notylus-com-issuer

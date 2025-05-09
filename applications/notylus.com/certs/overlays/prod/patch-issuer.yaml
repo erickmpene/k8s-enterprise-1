@@ -1,0 +1,10 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: notylus-com-issuer
+  namespace: notylus.com
+spec:
+  acme:
+    email: risty.beatmaker@gmail.com
+    privateKeySecretRef:
+      name: notylus.com-prod-account-key
