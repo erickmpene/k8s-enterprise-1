@@ -6,4 +6,14 @@ controller:
     enabled: true
   ingressClass: nginx
   service:
-    type: ClusterIP  # ou NodePort si bare-metal sans MetalLB
+    type: ClusterIP
+    annotations:
+      service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: "*"
+  config:
+    use-proxy-protocol: "true"
+  extraArgs:
+    enable-real-ip: ""
+    set-real-ip-from: "0.0.0.0/0"
+    real-ip-header: "proxy_protocol"
+
+terminationGracePeriodSeconds: 300
