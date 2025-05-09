@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: site-1.kingakati.com-dev-certs
+  name: notylus-com-prod-certs
   namespace: argocd
 spec:
-  project: site-1.kingakati.com
+  project: notylus.com
   source:
     repoURL: git@github.com:erickmpene/k8s-enterprise-1.git
     targetRevision: main
-    path: applications/site-1.kingakati.com/certs/overlays/dev
+    path: applications/notylus.com/certs/overlays/prod
   destination:
     server: https://kbs.notylus.com:6443
-    namespace: site-1-kingakati-com
+    namespace: notylus.com
   syncPolicy:
     automated:
       selfHeal: true

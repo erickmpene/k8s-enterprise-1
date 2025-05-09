@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: site-1.kingakati.com-dev
+  name: notylus-com-staging
   namespace: argocd
 spec:
-  project: site-1.kingakati.com
+  project: notylus.com
   source:
     repoURL: git@github.com:erickmpene/k8s-enterprise-1.git
     targetRevision: main
-    path: applications/site-1.kingakati.com/app-of-apps/dev
+    path: applications/notylus.com/app-of-apps/staging
     directory:
       recurse: true
   destination:
