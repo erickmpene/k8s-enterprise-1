@@ -1,0 +1,6 @@
+resources:
+  - ../../base
+
+patchesStrategicMerge:
+  - patch-certificate.yaml
+  - patch-issuer.yaml
