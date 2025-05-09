@@ -11,7 +11,7 @@ spec:
     path: applications/notylus.com/web/overlays/prod
   destination:
     server: https://kbs.notylus.com:6443
-    namespace: notylus.com
+    namespace: notylus-com
   syncPolicy:
     automated:
       selfHeal: true
