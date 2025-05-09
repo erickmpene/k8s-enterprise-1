@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: site-1.kingakati.com-dev-web
+  namespace: argocd
+spec:
+  project: site-1.kingakati.com
+  source:
+    repoURL: git@github.com:erickmpene/k8s-enterprise-1.git
+    targetRevision: main
+    path: applications/site-1.kingakati.com/web/overlays/dev
+  destination:
+    server: https://kbs.notylus.com:6443
+    namespace: site-1-kingakati-com
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
