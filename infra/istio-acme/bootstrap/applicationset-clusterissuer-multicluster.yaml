@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: istio-multicluster
+  name: clusterissuer-multicluster
   namespace: argocd
 spec:
   generators:
@@ -16,19 +16,16 @@ spec:
                 - prod
   template:
     metadata:
-      name: istio-{{name}}
+      name: clusterissuer-{{name}}
     spec:
       project: infra
       source:
         repoURL: https://github.com/erickmpene/k8s-enterprise-1.git
         targetRevision: main
-        path: infra/istio/envs/{{name}}
-        helm:
-          valueFiles:
-            - values.yaml
+        path: infra/istio-acme/cert-manager/clusterissuer
       destination:
         server: '{{server}}'
-        namespace: istio-system
+        namespace: cert-manager
       syncPolicy:
         automated:
           prune: true
@@ -37,6 +34,6 @@ spec:
           - CreateNamespace=true
       info:
         - name: Managed by
-          value: ArgoCD with Helm
+          value: ArgoCD
         - name: Purpose
-          value: Deploy istio per-cluster
+          value: Deploy ClusterIssuer for Let's Encrypt via Istio

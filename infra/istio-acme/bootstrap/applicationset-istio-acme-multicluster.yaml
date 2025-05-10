@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: istio-multicluster
+  name: istio-acme-multicluster
   namespace: argocd
 spec:
   generators:
@@ -16,19 +16,20 @@ spec:
                 - prod
   template:
     metadata:
-      name: istio-{{name}}
+      name: istio-acme-{{name}}
     spec:
       project: infra
       source:
-        repoURL: https://github.com/erickmpene/k8s-enterprise-1.git
-        targetRevision: main
-        path: infra/istio/envs/{{name}}
+        repoURL: https://tetratelabs.github.io/helm-charts
+        chart: istio-acme
+        targetRevision: 0.5.0
         helm:
           valueFiles:
             - values.yaml
+        path: infra/istio-acme/istio-acme
       destination:
         server: '{{server}}'
-        namespace: istio-system
+        namespace: cert-manager
       syncPolicy:
         automated:
           prune: true
@@ -39,4 +40,4 @@ spec:
         - name: Managed by
           value: ArgoCD with Helm
         - name: Purpose
-          value: Deploy istio per-cluster
+          value: Deploy istio-acme per cluster
