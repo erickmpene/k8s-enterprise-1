@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: notylus-com
+  name: notylus-com
+  namespace: notylus-com
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notylus-com
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: notylus-com
+    spec:
+      containers:
+      - image: PLACEHOLDER
+        name: notylus-com
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}
