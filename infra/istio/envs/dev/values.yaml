@@ -19,3 +19,15 @@ service:
     - name: https
       port: 443
       targetPort: 8443
+
+deployment:
+  podAnnotations: {}
+  podLabels: {}
+
+  containers:
+    - name: istio-proxy
+      ports:
+        - containerPort: 8080
+          name: http
+        - containerPort: 8443
+          name: https
