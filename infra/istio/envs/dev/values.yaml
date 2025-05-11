@@ -1,33 +1,36 @@
-namespaceOverride: istio-system
-controller:
-  logLevel: info
-speaker:
-  logLevel: info
+# namespaceOverride: istio-system
+# controller:
+#   logLevel: info
+# speaker:
+#   logLevel: info
 
-hub: docker.io/istio
-# image: proxyv2
-# tag: 1.25.2
+# proxy:
+#   image: proxyv2
 
-# image: docker.io/istio/proxyv2:1.25.2
+# # hub: docker.io/istio
+# # image: proxyv2
+# # tag: 1.25.2
 
-service:
-  type: LoadBalancer
-  ports:
-    - name: http2
-      port: 80
-      targetPort: 8080
-    - name: https
-      port: 443
-      targetPort: 8443
+# # image: docker.io/istio/proxyv2:1.25.2
 
-deployment:
-  podAnnotations: {}
-  podLabels: {}
+# service:
+#   type: LoadBalancer
+#   ports:
+#     - name: http2
+#       port: 80
+#       targetPort: 8080
+#     - name: https
+#       port: 443
+#       targetPort: 8443
 
-  containers:
-    - name: istio-proxy
-      ports:
-        - containerPort: 8080
-          name: http
-        - containerPort: 8443
-          name: https
+# deployment:
+#   podAnnotations: {}
+#   podLabels: {}
+
+#   containers:
+#     - name: istio-proxy
+#       ports:
+#         - containerPort: 8080
+#           name: http
+#         - containerPort: 8443
+#           name: https
