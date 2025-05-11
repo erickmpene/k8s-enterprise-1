@@ -10,7 +10,7 @@ spec:
     targetRevision: main
     path: applications/notylus.com/certs/overlays/staging
   destination:
-    server: https://kbs.notylus.com:6443
+    server: https://k8s.staging.notylus.com:6443
     namespace: notylus-com
   syncPolicy:
     automated:
