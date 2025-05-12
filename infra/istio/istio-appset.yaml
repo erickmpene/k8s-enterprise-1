@@ -11,9 +11,9 @@ spec:
             - key: env
               operator: In
               values:
-                # - dev
+                - dev
                 - staging
-                # - prod
+                - prod
   template:
     metadata:
       name: istio-{{name}}
