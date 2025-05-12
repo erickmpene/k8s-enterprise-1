@@ -8,7 +8,7 @@ gateway:
     pullPolicy: IfNotPresent
 
   labels:
-    debug-source: from-wrapper-values
+    debug-source: totototototototototototitititi
 
   service:
     type: LoadBalancer
