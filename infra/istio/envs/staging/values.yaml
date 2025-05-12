@@ -4,7 +4,7 @@
 # speaker:
 #   logLevel: info
 
-istio-ingress:
+gateway:
   image:
     repository: docker.io/istio/proxyv2
     tag: 1.26.0
