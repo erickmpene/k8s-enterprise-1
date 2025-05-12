@@ -13,23 +13,19 @@ service:
   type: LoadBalancer
   ports:
     - name: http2
-      port: 80
+      port: 81
       targetPort: 8080
-    - name: https
-      port: 443
-      targetPort: 8443
 
 labels:
   debug-source: from-values-yaml
 
 deployment:
+  podAnnotations:
+    debug/check: "yes"
   containers:
     - name: istio-proxy
       ports:
         - containerPort: 8080
           name: http
-        - containerPort: 8443
-          name: https
-
 
 
