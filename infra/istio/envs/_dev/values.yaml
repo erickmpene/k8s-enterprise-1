@@ -7,9 +7,9 @@
 # proxy:
 #   image: proxyv2
 
-# # hub: docker.io/istio
-# # image: proxyv2
-# # tag: 1.25.2
+hub: docker.io/istio
+# image: proxyv2
+tag: 1.25.2
 
 # # image: docker.io/istio/proxyv2:1.25.2
 
