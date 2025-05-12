@@ -4,13 +4,17 @@ description: Helm wrapper to deploy istio via GitOps
 version: 0.1.0
 
 dependencies:
-  - name: gateway
-    version: 1.25.2
-    repository: https://istio-release.storage.googleapis.com/charts
   - name: base
-    version: 1.25.2
+    version: 1.26.0
     repository: https://istio-release.storage.googleapis.com/charts
   - name: istiod
-    version: 1.25.2
+    version: 1.26.0
     repository: https://istio-release.storage.googleapis.com/charts
+  - name: gateway
+    version: 1.26.0
+    repository: https://istio-release.storage.googleapis.com/charts
+  # - name: cni
+  #   repository: https://istio-release.storage.googleapis.com/charts
+  #   version: 1.26.0
+
 
