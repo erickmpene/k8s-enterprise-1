@@ -5,10 +5,8 @@
 #   logLevel: info
 
 gateway:
-  image:
-    repository: docker.io/istio/proxyv2
-    tag: 1.26.0
-    pullPolicy: IfNotPresent
+  hub: docker.io/istio
+  tag: 1.26.0
 
   service:
     type: LoadBalancer
