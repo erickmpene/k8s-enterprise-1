@@ -4,28 +4,21 @@
 # speaker:
 #   logLevel: info
 
-image:
-  repository: docker.io/istio/proxyv2
-  tag: 1.26.0
-  pullPolicy: IfNotPresent
-
-service:
-  type: LoadBalancer
-  ports:
-    - name: http2
-      port: 81
-      targetPort: 8080
-
-labels:
-  debug-source: from-values-yaml
-
-deployment:
-  podAnnotations:
-    debug/check: "yes"
-  containers:
-    - name: istio-proxy
-      ports:
-        - containerPort: 8080
-          name: http
+istio-ingress:
+  image:
+    repository: docker.io/istio/proxyv2
+    tag: 1.26.0
+  service:
+    type: LoadBalancer
+    ports:
+      - name: http2
+        port: 80
+        targetPort: 8080
+      - name: https
+        port: 443
+        targetPort: 8443
+  deployment:
+    podAnnotations:
+      debug/check: "yes"
 
 
