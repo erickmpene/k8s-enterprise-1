@@ -10,3 +10,4 @@ spec:
     - dev.notylus.com
   issuerRef:
     name: notylus-com-issuer
+    kind: ClusterIssuer
