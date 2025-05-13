@@ -10,4 +10,4 @@ spec:
     - PLACEHOLDER
   issuerRef:
     name: PLACEHOLDER
-    kind: ClusterIssuer
+    kind: Issuer
