@@ -9,7 +9,7 @@ spec:
   template:
     spec:
       containers:
-      - image: erickmpene/nginx-all:v5
+      - image: erickmpene/site-vitrine:dev
         name: site-vitrine
         ports:
         - containerPort: 8080
