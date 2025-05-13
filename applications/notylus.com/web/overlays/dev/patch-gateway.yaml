@@ -2,7 +2,7 @@ apiVersion: networking.istio.io/v1beta1
 kind: Gateway
 metadata:
   name: istio-gateway-notylus-com
-  namespace: istio-system
+  namespace: notylus-com
 spec:
   selector:
     istio: dev

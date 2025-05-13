@@ -7,7 +7,7 @@ spec:
   hosts:
   - dev.notylus.com
   gateways:
-  - istio-system/istio-gateway-notylus-com
+  - istio-gateway-notylus-com
   http:
   - match:
     - uri:
