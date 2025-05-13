@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: notylus-com
+  namespace: notylus-com
+spec:
+  hosts:
+  - prod.notylus.com
+  gateways:
+  - istio-gateway-notylus-com
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: notylus-com
+        port:
+          number: 80

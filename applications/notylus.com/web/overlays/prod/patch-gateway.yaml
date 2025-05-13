@@ -1,0 +1,24 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: istio-gateway-notylus-com
+  namespace: notylus-com
+spec:
+  selector:
+    istio: prod
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - prod.notylus.com
+  - port:
+      number: 443
+      name: https
+      protocol: HTTPS
+    hosts:
+    - prod.notylus.com
+    tls:
+      mode: SIMPLE
+      credentialName: notylus-com-prod-tls-secret
