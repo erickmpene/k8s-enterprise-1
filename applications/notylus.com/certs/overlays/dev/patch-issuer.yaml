@@ -1,8 +1,8 @@
 apiVersion: cert-manager.io/v1
-kind: Issuer
+kind: ClusterIssuer
 metadata:
   name: notylus-com-issuer
-  namespace: notylus-com
+  namespace: istio-system
 spec:
   acme:
     email: risty.beatmaker@gmail.com
