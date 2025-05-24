@@ -29,5 +29,9 @@ gateway:
             name: https
 
 
+_internal_defaults_do_not_set:
+  podAnnotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "15014"
 
 
