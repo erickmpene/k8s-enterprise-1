@@ -12,5 +12,5 @@ spec:
     - name: http
       protocol: TCP
       port: 80
-      targetPort: PLACEHOLDER
+      targetPort: 5678
   type: ClusterIP

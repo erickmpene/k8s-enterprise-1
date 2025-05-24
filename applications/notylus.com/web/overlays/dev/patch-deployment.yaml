@@ -17,7 +17,7 @@ spec:
         app: notylus-com
     spec:
       containers:
-      - image: erickmpene/site-2:dev
+      - image: erickmpene/n8n:v1
         name: notylus-com
         ports:
         - containerPort: 8080
