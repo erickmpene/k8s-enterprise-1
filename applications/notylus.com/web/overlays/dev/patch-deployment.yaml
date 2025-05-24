@@ -20,6 +20,6 @@ spec:
       - image: erickmpene/n8n:v1
         name: notylus-com
         ports:
-        - containerPort: 8080
+        - containerPort: 5678
         resources: {}
 status: {}

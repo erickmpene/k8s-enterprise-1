@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: notylus-com
+  namespace: notylus-com
+  labels:
+    app: notylus-com
+spec:
+  selector:
+    app: notylus-com
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: PLACEHOLDER
+  type: ClusterIP
