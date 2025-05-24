@@ -16,6 +16,9 @@ gateway:
       - name: https
         port: 443
         targetPort: 8443
+      - name: http-monitoring
+        port: 15090
+        targetPort: 15090
 
   deployment:
     podAnnotations:
@@ -27,6 +30,8 @@ gateway:
             name: http
           - containerPort: 8443
             name: https
+          - containerPort: 15090
+            name: http-monitoring
 
 
 _internal_defaults_do_not_set:

@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: istio-dev-gateway
+  namespace: monitoring
+  labels:
+    release: monitoring-dev
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: istio-dev
+  namespaceSelector:
+    matchNames:
+      - istio-system
+  endpoints:
+    - port: http-monitoring
+      interval: 15s
+      path: /stats/prometheus
+      scheme: http
