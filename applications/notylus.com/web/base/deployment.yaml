@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: notylus-com
+    istio-injection: enabled
   name: notylus-com
   namespace: notylus-com
 spec:
