@@ -6,7 +6,6 @@ metadata:
   name: notylus-com
   namespace: notylus-com
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: notylus-com
