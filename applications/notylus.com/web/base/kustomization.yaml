@@ -3,4 +3,6 @@ resources:
   - ingress.yaml
   - service.yaml
   - gateway.yaml
+  - namespace.yaml
+
 

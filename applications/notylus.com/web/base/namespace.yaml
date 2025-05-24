@@ -1,0 +1,7 @@
+# apps/namespaces/notylus-com.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: notylus-com
+  labels:
+    istio-injection: "enabled"
