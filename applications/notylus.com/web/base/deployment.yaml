@@ -21,5 +21,19 @@ spec:
         name: notylus-com
         ports:
         - containerPort: 5678
-        resources: {}
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "256Mi"
+          limits:
+            cpu: "1000m"
+            memory: "2048Mi"
+        volumeMounts:
+          - name: pvc-web-application
+            mountPath: /home/node/.n8n
+      volumes:
+        - name: pvc-web-application
+          persistentVolumeClaim:
+            claimName: pvc-web-application
+
 status: {}

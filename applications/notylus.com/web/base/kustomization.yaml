@@ -4,5 +4,6 @@ resources:
   - service.yaml
   - gateway.yaml
   - namespace.yaml
+  - pvc.yaml
 
 
