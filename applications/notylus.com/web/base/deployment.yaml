@@ -20,7 +20,7 @@ spec:
       - image: PLACEHOLDER
         name: notylus-com
         ports:
-        - containerPort: 5678
+        - containerPort: 8080
         resources:
           requests:
             cpu: "100m"
