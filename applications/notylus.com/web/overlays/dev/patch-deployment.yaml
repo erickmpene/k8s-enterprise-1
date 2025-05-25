@@ -16,9 +16,9 @@ spec:
         app: notylus-com
     spec:
       containers:
-      - image: erickmpene/test-mesh:orange
+      - image: erickmpene/n8n:v1
         name: notylus-com
         ports:
-        - containerPort: 8080
+        - containerPort: 5678
         resources: {}
 status: {}
